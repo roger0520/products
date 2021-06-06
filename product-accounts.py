@@ -1,6 +1,15 @@
 #二維清單
 
 products =[]
+with open('products.csv', 'r', encoding='utf-8') as f:
+    for line in f:
+        name, price = line.strip().split(',')   #先進行remove \n ;在進行split功能 切割完的結果是清單
+        products.append([name, price])
+        
+print(products)
+
+
+
 while True:
     name = input('請輸入商品名稱: ')
     if name == 'q':
